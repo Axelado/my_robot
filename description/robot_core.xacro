@@ -134,7 +134,7 @@
 
     <!-- CASTER WHEEL -->
     <xacro:property name="diametre_caster" value="${diametre_roue}" />
-    <xacro:property name="distance_caster" value="0.225" />
+    <xacro:property name="distance_caster" value="0.20" />
     <xacro:property name="masse_caster" value="0.1" />
 
     <joint name="caster_wheel_joint" type="fixed">
