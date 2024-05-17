@@ -23,16 +23,40 @@
         <color rgba="0 0 0 1"/>
     </material>
 
-    <link name="base_link">
-    </link>
-
-    <!-- CHASSIS -->
+    <!-- PROPERTY -->
     <xacro:property name="longueur_robot" value="0.25" />
     <xacro:property name="largeur_robot" value="0.15" />
     <xacro:property name="hauteur_robot" value="0.084" />
     <xacro:property name="distance_cir" value="0.07836" />
     <xacro:property name="masse_robot" value="0.5" />
 
+    <xacro:property name="distance_cir_roue" value="0.1" />
+    <xacro:property name="longueur_roue" value="0.03" />
+    <xacro:property name="diametre_roue" value="0.065" />
+    <xacro:property name="masse_roue" value="0.1" />
+
+    <xacro:property name="diametre_caster" value="${diametre_roue}" />
+    <xacro:property name="distance_caster" value="0.20" />
+    <xacro:property name="masse_caster" value="0.1" />
+
+
+    <!-- BASE LINK -->
+    <link name="base_link"></link>
+
+
+    <!-- BASE LINK FOOTPRINT -->
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+        <origin xyz="0 0 -${diametre_roue/2}" rpy="0 0 0"/>
+    </joint>
+
+    <link name="base_footprint">
+    </link>
+
+
+    
+    <!-- CHASSIS -->
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
@@ -65,11 +89,6 @@
     </gazebo>
 
     <!-- LEFT WHEEL -->
-    <xacro:property name="distance_cir_roue" value="0.1" />
-    <xacro:property name="longueur_roue" value="0.03" />
-    <xacro:property name="diametre_roue" value="0.065" />
-    <xacro:property name="masse_roue" value="0.1" />
-
     <joint name="left_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="left_wheel"/>
@@ -133,10 +152,6 @@
     </gazebo>
 
     <!-- CASTER WHEEL -->
-    <xacro:property name="diametre_caster" value="${diametre_roue}" />
-    <xacro:property name="distance_caster" value="0.20" />
-    <xacro:property name="masse_caster" value="0.1" />
-
     <joint name="caster_wheel_joint" type="fixed">
         <parent link="chassis"/>
         <child link="caster_wheel"/>
