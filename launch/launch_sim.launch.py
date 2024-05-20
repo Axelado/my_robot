@@ -47,7 +47,6 @@ def generate_launch_description():
         executable="spawner",
         arguments=["joint_broad"],
     )
-    
 
     return LaunchDescription([
         rsp,
