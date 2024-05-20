@@ -27,7 +27,7 @@
 
     <gazebo>
         <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-            <parameters>$(find my_robot)/config/my_controllers.yaml</parameters>
+            <parameters>$(find my_robot)/params/my_controllers.yaml</parameters>
         </plugin>
     </gazebo>
 
