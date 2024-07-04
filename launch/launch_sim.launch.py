@@ -57,6 +57,15 @@ def generate_launch_description():
         executable="spawner",
         arguments=["joint_broad"],
     )
+    
+    twist_mux_params = os.path.join(get_package_share_directory(package_name), 'params', 'twist_mux.yaml')
+    twist_mux = Node (
+        package="twist_mux",
+        executable="twist_mux",
+        parameters=[twist_mux_params, {'use_sim_time': True}],
+        # remappings=[('/cmd_vel_out', 'diffbot_base_controller/cmd_vel_unstamped')]
+        remappings=[('/cmd_vel_out', 'diff_cont/cmd_vel_unstamped')]
+    )
 
     return LaunchDescription([
         gazebo_world_arg,
@@ -64,6 +73,7 @@ def generate_launch_description():
         gazebo,
         spawn_entity,
         diff_drive_spawner,
-        joint_broad_spawner
+        joint_broad_spawner,
+        twist_mux
     ])
 

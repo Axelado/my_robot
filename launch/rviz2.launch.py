@@ -13,7 +13,7 @@ def generate_launch_description():
     # Declare the RVIZ config file argument
     rviz_config_file_arg = DeclareLaunchArgument(
         'rviz_config_file',
-        default_value=os.path.join(get_package_share_directory(package_name), 'rviz', 'mapping.rviz'),
+        default_value=os.path.join(get_package_share_directory(package_name), 'rviz', 'localization.rviz'),
         description='Full path to the RVIZ config file to use'
     )
     
