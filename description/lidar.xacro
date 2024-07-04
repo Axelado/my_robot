@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-    <xacro:property name="distance_lidar" value="0.1" />
-    <xacro:property name="diametre_lidar" value="0.1" />
+    <xacro:property name="distance_lidar" value="0.217" />
+    <xacro:property name="diametre_lidar" value="0.068" />
     <xacro:property name="longueur_lidar" value="0.04" />
+    <xacro:property name="hauteur_lidar" value="0.169" />
     <xacro:property name="masse_lidar" value="0.1" />
 
     <joint name="laser_joint" type="fixed">
         <parent link="chassis"/>
         <child link="laser_frame"/>
-        <origin xyz="${distance_lidar} 0 ${hauteur_robot+(longueur_lidar/2)}" rpy="0 0 0"/>
+        <origin xyz="${distance_lidar} 0 ${hauteur_lidar}" rpy="0 0 0"/>
     </joint>
 
     <link name="laser_frame">

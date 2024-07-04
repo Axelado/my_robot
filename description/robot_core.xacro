@@ -24,19 +24,19 @@
     </material>
 
     <!-- PROPERTY -->
-    <xacro:property name="longueur_robot" value="0.25" />
-    <xacro:property name="largeur_robot" value="0.15" />
-    <xacro:property name="hauteur_robot" value="0.084" />
-    <xacro:property name="distance_cir" value="0.07836" />
-    <xacro:property name="masse_robot" value="0.5" />
+    <xacro:property name="longueur_robot" value="0.308" />
+    <xacro:property name="largeur_robot" value="0.258" />
+    <xacro:property name="hauteur_robot" value="0.158" />
+    <xacro:property name="distance_cir" value="0.07" />
+    <xacro:property name="masse_robot" value="1" />
 
-    <xacro:property name="distance_cir_roue" value="0.1" />
-    <xacro:property name="longueur_roue" value="0.03" />
-    <xacro:property name="diametre_roue" value="0.065" />
+    <xacro:property name="distance_cir_roue" value="${(largeur_robot/2)-longueur_roue}" />
+    <xacro:property name="longueur_roue" value="0.025" />
+    <xacro:property name="diametre_roue" value="0.068" />
     <xacro:property name="masse_roue" value="0.1" />
 
+    <xacro:property name="distance_caster" value="${longueur_robot-0.066}" />
     <xacro:property name="diametre_caster" value="${diametre_roue}" />
-    <xacro:property name="distance_caster" value="0.20" />
     <xacro:property name="masse_caster" value="0.1" />
 
 
